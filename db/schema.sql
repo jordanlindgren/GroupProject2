@@ -1,0 +1,5 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS captionmeme_db;
+
+-- CREATE DATABASE
+CREATE DATABASE captionmeme_db;
