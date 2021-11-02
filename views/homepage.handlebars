@@ -1,0 +1,14 @@
+<div class="container">
+        <section class="row">
+            <div class="row" style="margin-top: 20px;">
+                {{#each memes |meme|}}
+                <div class="col-md-3">
+                    <div class="card" id="createMeme" style="margin-top:20px;">
+                        <a href="..."><img src={{meme.img_url}} class="card-img-top" alt="..."></a>
+                        <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+</div>
