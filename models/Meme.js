@@ -12,6 +12,10 @@ Meme.init (
             primaryKey: true,
             autoIncrement: true,
         },
+        meme_text:{
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         img_url:{
             type: DataTypes.STRING,
             allowNull: false,
