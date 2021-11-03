@@ -1,0 +1,10 @@
+<div class="row" style="margin-top: 20px;">
+    {{#each popimage as |loadedImg|}}
+    <div class="col-md-3">
+        <div class="card" id="createMeme" style="margin-top:20px;">
+            <img id="{{loadedImg.id}}" src="{{loadedImg.image.img_url}}" class="card-img-top" alt="meme picture">
+            <h5 class="card-text" style="font-size: 25px; text-align: center;">hidden text</h5>
+        </div>
+    </div>
+    {{/each}}
+</div>
