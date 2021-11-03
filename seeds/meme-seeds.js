@@ -1,23 +1,24 @@
-const { Entry } = require('../models');
+const { Meme } = require('../models');
 
-const entryData = [
+const memeData = [
   {
-    entry_title: "Bad Day Today",
-    entry_text: "My homework is way too hard. I hope my tutor is available today.",
-    user_id: 1
+    meme_text: "When I fix a bug in my instructor's code",
+    user_id: 1,
+    img_id: 1
   },
   {
-    entry_title: "I love jQuery",
-    entry_text: "I really like using jQuery. It's so much faster than using the old JavaScript.",
-    user_id: 2
+    meme_text: "Me after 8 weeks of boot camp",
+    user_id: 2,
+    img_id: 2
   },
   {
-    entry_title: "OOP",
-    entry_text: "I dont understand this at all. Can any one out there relate?",
-    user_id: 3
+    meme_text: "The pineapple before it hits Gary's pizza",
+    user_id: 3,
+    img_id: 3
   },
+  
 ];
 
-const seedCategories = () => Entry.bulkCreate(entryData);
+const seedCategories = () => Meme.bulkCreate(memeData);
 
 module.exports = seedCategories;
