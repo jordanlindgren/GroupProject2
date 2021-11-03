@@ -1,0 +1,103 @@
+
+#navbarText{
+    display: flexbox;
+    justify-content: right;
+}
+
+#navbarNavAltMarkup{
+    justify-content: right;
+}
+
+#choose-img-title{
+    font-size: 60px;
+    margin-left: 10px;
+    text-shadow: .06em .06em 0 #c9c9c9;
+
+}
+
+h1{
+    width: 100%;
+}
+#createMeme{
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#createMemeimg{
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#insert-caption{
+    font-size: 35px;
+    font-weight: bold;  
+}
+
+#inputCaption{
+    width: 80%;
+
+}
+
+#createMeme:hover{
+    opacity: 50%;
+}
+
+#postBtn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+#yourArt{
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: .04em .04em 0 #c9c9c9;
+}
+
+#signup-form, #login-form{
+    background-color:rgba(255, 255, 255, 0.851);
+    border-radius: 2px;
+    margin-top: 10%;
+    width: 30rem;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: 10px;
+}
+
+#signup-username-input, #signup-password-input, #login-username-input, #login-password-input{
+    width: 17rem;
+}
+
+#loginAnyway, #signUp{
+    display: block;
+    margin-bottom: 10px;
+}
+
+#formGroupExampleInput2{
+    width: 28.25%;
+}
+
+#commentContainer{
+    width: 45%;    
+}
+
+#commentData{
+    font-size: 12px;
+}
+
+#new-comment{
+    width: 55%;
+}
+
+#comment-submit-button{
+    margin-bottom: 10px;
+}
+
+#hidden-id{
+    visibility: hidden;
+}
+
+.hidden-id{
+    visibility: hidden;
+}
