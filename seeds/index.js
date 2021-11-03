@@ -1,6 +1,7 @@
-const seedEntries = require('./entry-seeds');
+const seedMemes = require('./meme-seeds');
 const seedUsers = require('./user-seeds');
 const seedComments = require('./comment-seeds');
+const seedImages = require('./image-seed')
 
 const sequelize = require('../config/connection');
 
@@ -11,11 +12,14 @@ const seedAll = async () => {
   await seedUsers();
   console.log('\n----- USERS SEEDED -----\n');
   
-  await seedEntries();
-  console.log('\n----- ENTRIES SEEDED -----\n');
+  await seedMemes();
+  console.log('\n----- MEMES SEEDED -----\n');
 
   await seedComments();
   console.log('\n----- COMMENTS SEEDED -----\n');
+
+  await seedImages();
+  console.log('\n----- IMAGES SEEDED -----\n');
 
   process.exit(0);
 };

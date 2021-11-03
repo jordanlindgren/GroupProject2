@@ -2,21 +2,20 @@ const { Comment } = require('../models');
 
 const commentData = [
   {
-    comment_text: "Saaaaame. Good luck!",
-    user_id: "2",
-    entry_id: "1",
-  },
-  {
-    comment_text: "Spot on. It's such a time saver!",
+    comment_text: "OMG hilarious!",
     user_id: "3",
-    entry_id: "2",
+    meme_id: "1",
   },
   {
-    comment_text: "I am starting to understand if you wanna do a study group.",
-    user_id: "1",
-    entry_id: "3",
+    comment_text: "LOL",
+    user_id: "2",
+    meme_id: "2",
   },
-  
+  {
+    comment_text: "lame",
+    user_id: "1",
+    meme_id: "3",
+  },
 ];
 
 const seedTags = () => Comment.bulkCreate(commentData);
