@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Entry, Comment } = require('../models');
+const { User, Entry, Comment, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -19,7 +19,21 @@ router.get("/", withAuth, (req, res) => {
     .then(allMyMemes => {
         const myMemes = allMyMemes.map((meme) => meme.get ({ plain:true }));
 
-        res.render("profile-landing", { myMemes, logged_in: req.session.logged_in });
+        res.render("profile-landing", { myMemes, logged_in: req.session.logged_in, layout:"profile" });
+    })
+    .catch (err => {
+        console.log(err);
+        res.status(500).json(err);
+    }) 
+});
+
+// Displays all images in database
+router.get("/create", withAuth, (req, res) => {
+    Image.findAll({})
+    .then(allImages => {
+        const images = allImages.map((image) => image.get ({ plain:true }));
+
+        res.render("choose-image", { images, logged_in: req.session.logged_in, layout:"profile" });
     })
     .catch (err => {
         console.log(err);
@@ -44,7 +58,8 @@ router.get("/profile/:id", withAuth, async (req, res) => {
 
         res.render("meme-update-delete", {
             ...myMeme,
-            logged_in: req.session.logged_in 
+            logged_in: req.session.logged_in ,
+            layout:"profile"
         });
     } catch (err) {
         res.status(500).json(err);
@@ -54,7 +69,7 @@ router.get("/profile/:id", withAuth, async (req, res) => {
 
 // Displays HTML for creating a new meme
 router.get("/create", (req, res) => {
-    res.render("create-meme", {logged_in: req.session.logged_in});
+    res.render("create-meme", { logged_in: req.session.logged_in, layout:"profile" });
 
 });
 

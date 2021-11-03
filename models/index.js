@@ -2,6 +2,7 @@
 const Comment = require("./Comment");
 const Meme = require("./Meme");
 const User = require("./User");
+const Image = require("./Image");
 
 // Defines associates between models
 
@@ -34,9 +35,18 @@ Comment.belongsTo(Meme, {
     foreignKey: "meme_id"
 });
 
+Meme.hasOne(Image, {
+    foreignKey: "img_id",
+})
+
+Image.belongToMany(Meme, {
+    foreignKey: "img_id",
+})
+
 // Allows models to be used in other files
 module.exports = {
     Comment, 
     Meme, 
     User,
+    Image,
 };

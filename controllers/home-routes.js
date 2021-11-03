@@ -37,7 +37,7 @@ router.get('/memes/:id', async (req, res) => {
           },
           {
             model: Comment,
-            attributes: ['comment_text', "user_id", "created_at"],
+            attributes: ['comment_text', "user_id"],
             include: [User],
           },
         ],
