@@ -23,7 +23,7 @@ router.put('/:id', withAuth, (req, res) => {
     Meme.update (req.body, {
       where: {
         id: req.params.id
-      }
+      },
     })
     .then(updatedMeme => res.json(updatedMeme))
     .catch(err => res.status(400).json(err));

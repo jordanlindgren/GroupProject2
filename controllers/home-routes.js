@@ -9,9 +9,13 @@ router.get("/", async (req, res) => {
           const memeData = await Meme.findAll({
               include: [
                   {
-                      model: User,
-                      attributes: ["username"],
+                    model: User,
+                    attributes: ["username"],
                   },
+                  {
+                    model: Image,
+                    attributes: ["img_url"],
+                },
               ],
           });
           
@@ -39,6 +43,10 @@ router.get('/memes/:id', async (req, res) => {
             model: Comment,
             attributes: ['comment_text', "user_id"],
             include: [User],
+          },
+          {
+            model: Image,
+            attributes: ['id', "img_url"],
           },
         ],
       });

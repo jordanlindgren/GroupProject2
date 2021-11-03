@@ -2,27 +2,32 @@
     <div class="card-body">
         <div class="col-md-3">
             <div class="card" id="createMeme" style="margin-top:20px;">
-                <img src="{{image.meme_img}}" "class="card-img-top" alt="meme picture">
-                <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
+                <h5 id="meme-id" class="hidden-id">{{id}}</h5>
+                <img src="{{meme.image.img_url}}" class="card-img-top" alt="meme picture">
+                <p class="card-text" style="font-size: 25px; text-align: center;">{{meme_text}}</p>
             </div>
-                <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 10px;">Poster and posted date</h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 10px;">Posted by: {{user.username}}</h6>
         </div>
     </div>   
 </div> 
-        
+
+{{#each comments as |comment|}}    
 <div class="card entry-card col-10" id="commentContainer">
     <div class="card-body" >
-        <h6 class="card-subtitle mb-2 text-muted" id="commentData">Comment by {{comment.user.username}} on {{comment.created_at}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted" id="commentData">Comment by: {{comment.user.username}}</h6>
         <p class="card-text">{{comment.comment_text}}</p>
     </div>
-</div>     
+</div>  
+{{/each}}   
 
-<form class= "col-10" style="padding-left: 0px">
+<form class= "col-10 comment-submit-form" style="padding-left: 0px">
     <div class="form-group">
-        <label for="formGroupExampleInput2" style="margin-top: 10px;">New comment</label>
-        <input type="text" class="form-control" id="new-comment" placeholder="Input comment here">
+        <label for="formGroupExampleInput2" style="margin-top: 10px;">Add a comment</label>
+        <input type="text" class="form-control" id="new-comment-text" placeholder="Input comment here">
     </div>
     <div>
         <button id= "comment-submit-button" type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
+
+<script src="/js/comment.js"></script>

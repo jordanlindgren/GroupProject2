@@ -1,10 +1,13 @@
-<div class="row" style="margin-top: 20px;">
-    {{#each popimage as |loadedImg|}}
+<h2 id="choose-img-title">Choose An Image</h2>
+
+<div class="row choose-image-div" style="margin-top: 20px;">
+    {{#each images as |image|}}
     <div class="col-md-3">
         <div class="card" id="createMeme" style="margin-top:20px;">
-            <img id="{{loadedImg.id}}" src="{{loadedImg.image.img_url}}" class="card-img-top" alt="meme picture">
-            <h5 class="card-text" style="font-size: 25px; text-align: center;">hidden text</h5>
+            <img id="{{img.id}}" src="{{image.img_url}}" class="card-img-top" alt="meme picture">
         </div>
     </div>
     {{/each}}
 </div>
+
+<script src="/js/choose-image.js"></script>

@@ -5,6 +5,7 @@
             <div class="card" id="createMeme" style="margin-top:20px;">
                 <a href="/memes/{{meme.id}}"><img src="{{meme.image.img_url}}" class="card-img-top" alt="meme picture"></a>
                 <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
+                <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 10px;">Posted by: {{meme.user.username}}</h6>
             </div>
         </div>
         {{/each}}

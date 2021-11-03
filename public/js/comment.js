@@ -14,7 +14,7 @@ const newCommentHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace(`/entries/${meme_id}`);
+        document.location.replace(`/memes/${meme_id}`);
       } else {
         alert('Failed to create comment');
       }

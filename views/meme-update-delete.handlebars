@@ -1,17 +1,23 @@
 <div class="col-md-3">
     <div class="card" id="createMeme" style="margin-top:20px; margin-bottom: 20px;">
-        <img src="{{meme_url}}" class="card-img-top" alt="...">
+        <img src="{{meme.image.image_url}}" class="card-img-top" alt="meme picture">
         <p class="card-text" style="font-size: 25px; text-align: center;">{{meme_text}}</p>
+        <h5 id="edit-meme-id" class="hidden-id">{{id}}</h5>
     </div>
 </div>   
 
-<form class= "col-10" id="edit-entry-form">
+<form class= "col-10" id="edit-meme-form">
     <div class="form-group">
-        <label for="formGroupExampleInput2">Update your caption below</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="New caption text">
+        <label for="formGroupExampleInput2">Update Your Meme Text</label>
+        <input type="text" class="form-control" id="edited-meme" placeholder="New Meme Text">
     </div>
     <div>
-        <button id= "update-submit-button" type="submit" class="btn btn-primary">Update</button>
-        <button id= "delete-button" type="submit" class="btn btn-danger">Delete</button>
+        <button id= "update-submit-button" type="submit" class="btn btn-primary">Update Meme</button>
+        
     </div>
 </form>
+
+<button type="submit" class="btn btn-danger delete-button">Delete This Meme</button>
+
+
+<script src="/js/meme-update-create.js"></script>
