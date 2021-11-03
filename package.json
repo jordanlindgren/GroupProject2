@@ -27,6 +27,7 @@
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.2",
+    "scrollreveal": "^4.0.9",
     "sequelize": "^6.8.0"
   },
   "devDependencies": {
