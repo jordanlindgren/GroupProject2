@@ -16,26 +16,29 @@ Meme.init (
             type: DataTypes.STRING,
             allowNull: false,
         },
-        img_url:{
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         user_id:{
             type: DataTypes.INTEGER,
             references: {
                 model: "user",
                 key: "id",
             }
+        },
+        img_id:{
+            type: DataTypes.STRING,
+            references: {
+                model: "image",
+                key: "id",
+            }
         }
     }, 
     {
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: "meme",
     }
 );
 
-// Exports Entry for use in other files
-module.exports = Entry;
+// Exports Meme for use in other files
+module.exports = Meme;
