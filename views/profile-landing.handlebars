@@ -1,10 +1,10 @@
 <div id="yourArt">Your Creations<a href="..." ><button type="button" class="btn btn-secondary" style="margin-left: 40px;">Create A New Meme</button></a></div>
     <div>
-    {{#each createdMemes |myMemes|}}    
+    {{#each createdMemes as |myMemes|}}    
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-3">
                 <div class="card" id="createMeme" style="margin-top:20px;">
-                    <a href="..."><img src={{myMemes.meme_url}} class="card-img-top" alt="..."></a>
+                    <a href="..."><img src="{{myMemes.image.img_url}}" class="card-img-top" alt="..."></a>
                     <p class="card-text" style="font-size: 25px; text-align: center;">{{myMemes.meme_text}}</p>
                 </div>
             </div>

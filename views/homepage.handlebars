@@ -1,12 +1,12 @@
 <div class="container">
-            <div class="row" style="margin-top: 20px;">
-                 {{#each memes as |meme|}}
-                <div class="col-md-3">
-                    <div class="card" id="createMeme" style="margin-top:20px;">
-                        <a href="/memes/{{meme.id}}"><img src={{meme.image.img_url}} class="card-img-top" alt="..."></a>
-                        <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
-                    </div>
-                </div>
-                 {{/each}}
+    <div class="row" style="margin-top: 20px;">
+        {{#each memes as |meme|}}
+        <div class="col-md-3">
+            <div class="card" id="createMeme" style="margin-top:20px;">
+                <a href="/memes/{{meme.id}}"><img src="{{meme.image.img_url}}" class="card-img-top" alt="meme picture"></a>
+                <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
             </div>
+        </div>
+        {{/each}}
+    </div>
 </div>
