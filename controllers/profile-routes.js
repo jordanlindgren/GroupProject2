@@ -14,6 +14,10 @@ router.get("/", withAuth, (req, res) => {
                 model: User,
                 attributes: ["username"],
             },
+            {
+                model: Image,
+                attributes: ["id", "image_url"],
+            },
         ],
     })
     .then(allMyMemes => {
@@ -35,6 +39,10 @@ router.get("/profile/:id", withAuth, async (req, res) => {
               {
                 model: User,
                 attributes: ['username'],
+              },
+              {
+                model: Image,
+                attributes: ["id", "image_url"],
               },
             ], 
         });

@@ -1,11 +1,15 @@
 <div class="card mx-auto" id="createMemeimg" style="width: 35rem; margin-top:20px; margin-bottom:11rem;">
-    <img src="{{image.img_url}}" class="card-img-top" alt="meme image">
+    <img src="{{img_url}}" class="card-img-top" alt="meme image">
     <div class="card-body text-center">
-        <p id="insert-caption"></p>
+        <p id="img-id" class="hidden-id">{{id}}</p>
     </div>
     <hr style="padding: 0px;">
-    <div class="text-center mx-auto">
-        <input type="createdCaption" class="form-control text-center" aria-describedby="captionHelpBlock" placeholder="Input a caption here">
+    
+    
+    <form class="text-center mx-auto meme-submit-form">
+        <input id="new-entry-text" type="createdCaption" class="form-control text-center" aria-describedby="captionHelpBlock" placeholder="Input a caption here">
         <button type="submit" class="btn btn-primary" id="postBtn">Post Meme</button>
-    </div>
+    </form>
 </div>
+
+<script src="/js/create-meme"></script>
