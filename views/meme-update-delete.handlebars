@@ -1,0 +1,19 @@
+<!-- This card is to displays the meme when you clicked on -->
+        <div class="col-md-3">
+            <div class="card" id="createMeme" style="margin-top:20px; margin-bottom: 20px;">
+                <img src={{meme_url}} class="card-img-top" alt="...">
+                <p class="card-text" style="font-size: 25px; text-align: center;">{{meme_text}}</p>
+            </div>
+        </div>   
+
+        <!-- This is the form for editing the content -->
+        <form class= "col-10" id="edit-entry-form">
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Update your caption below</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="New caption text">
+            </div>
+            <div>
+                <button id= "update-submit-button" type="submit" class="btn btn-primary">Update</button>
+                <button id= "delete-button" type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
