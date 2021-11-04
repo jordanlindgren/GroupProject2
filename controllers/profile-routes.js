@@ -49,7 +49,6 @@ router.get("/:id", withAuth, async (req, res) => {
 
         const myMeme = myMemeData.get ({ plain: true});
 
-        console.log(myMeme);
         res.render("meme-update-delete", {
             ...myMeme,
             logged_in: req.session.logged_in ,
@@ -65,7 +64,7 @@ router.get("/create", withAuth, (req, res) => {
     console.log("Made it");
     Image.findAll({})
     .then(allImages => {
-        const images = allImages.map((image) => image.get ({ plain:true }));
+        const images = allImages.map((image) => image.get({ plain:true }));
 
         console.log(images);
         res.render("choose-image", { images, logged_in: req.session.logged_in, layout:"profile" });
@@ -79,14 +78,7 @@ router.get("/create", withAuth, (req, res) => {
 // Displays HTML for creating a new meme
 router.get("/create/:id", withAuth, async (req, res) => {
     try {
-        const myImageData = await Image.findByPk(req.params.id, {
-            // include: [
-            //   {
-            //     model: User,
-            //     attributes: ['username'],
-            //   },
-            // ], 
-        });
+        const myImageData = await Image.findByPk(req.params.id);
 
         const myImage = myImageData.get ({ plain: true});
 

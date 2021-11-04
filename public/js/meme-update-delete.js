@@ -4,7 +4,7 @@ const editEntryHandler = async (event) => {
     const meme_id = document.querySelector('#edit-meme-id').textContent;
     const meme_text = document.querySelector('#edited-meme').value.trim();
     
-  
+    console.log(meme_id, meme_text);
     if (meme_text) {
       const response = await fetch(`/api/memes/${meme_id}`, {
         method: 'PUT',
