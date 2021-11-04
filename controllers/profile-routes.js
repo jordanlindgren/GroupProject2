@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Entry, Comment, Image } = require('../models');
+const { User, Meme, Comment, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -16,7 +16,7 @@ router.get("/", withAuth, (req, res) => {
             },
             {
                 model: Image,
-                attributes: ["id", "image_url"],
+                attributes: ["id", "img_url"],
             },
         ],
     })
@@ -32,7 +32,7 @@ router.get("/", withAuth, (req, res) => {
 });
 
 // Displays a single meme created by this user with the option to edit or delete
-router.get("/profile/:id", withAuth, async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
     try {
         const myMemeData = await Meme.findByPk(req.params.id, {
             include: [
@@ -42,13 +42,14 @@ router.get("/profile/:id", withAuth, async (req, res) => {
               },
               {
                 model: Image,
-                attributes: ["id", "image_url"],
+                attributes: ["id", "img_url"],
               },
             ], 
         });
 
         const myMeme = myMemeData.get ({ plain: true});
 
+        console.log(myMeme);
         res.render("meme-update-delete", {
             ...myMeme,
             logged_in: req.session.logged_in ,
@@ -60,16 +61,16 @@ router.get("/profile/:id", withAuth, async (req, res) => {
 });
 
 // Displays all images in database
-router.get("/profile/create", withAuth, (req, res) => {
+router.get("/create", withAuth, (req, res) => {
     Image.findAll({})
     .then(allImages => {
         const images = allImages.map((image) => image.get ({ plain:true }));
 
+        console.log(images);
         res.render("choose-image", { images, logged_in: req.session.logged_in, layout:"profile" });
     })
-    .catch (err => {
+    .catch ((err) => { res.status(500).json(err);
         console.log(err);
-        res.status(500).json(err);
     }) 
 });
 
@@ -98,7 +99,7 @@ router.get("/create/:id", withAuth, async (req, res) => {
     }    
 });
 
-
+module.exports = router;
 
 
 

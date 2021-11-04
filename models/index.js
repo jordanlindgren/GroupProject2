@@ -1,3 +1,5 @@
+const router = require('express').Router();
+
 // Imports models
 const Comment = require("./Comment");
 const Meme = require("./Meme");
@@ -26,22 +28,22 @@ Meme.belongsTo(User, {
 });
 
 
-Meme.hasMany(Comment, {
-    foreignKey: "meme_id",
-    onDelete: "CASCADE"
-});
+// Meme.hasMany(Comment, {
+//     foreignKey: "meme_id",
+//     onDelete: "CASCADE"
+// });
 
 Comment.belongsTo(Meme, {
     foreignKey: "meme_id"
 });
 
-Meme.hasOne(Image, {
+Meme.belongsTo(Image, {
     foreignKey: "img_id",
 })
 
-Image.belongToMany(Meme, {
-    foreignKey: "img_id",
-})
+// Image.belongsToMany(Meme, {
+//     foreignKey: "img_id",
+// })
 
 // Allows models to be used in other files
 module.exports = {

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Meme, Comment } = require('../models');
+const { User, Meme, Comment, Image } = require('../models');
 
 
 // Displays all the saved memes on the page
@@ -20,9 +20,9 @@ router.get("/", async (req, res) => {
           });
           
           // Serializes data to pass to Handlebars
-          const memes = memeData.map((meme) => meme.get ({ plain:true }));
+          const memes = memeData.map((meme) => meme.get({ plain:true }));
   
-          res.render("memes", { memes, logged_in: req.session.logged_in });
+          res.render("homepage", { memes, logged_in: req.session.logged_in });
       } catch (err) {
           console.log(err);
           res.status(500).json(err);
