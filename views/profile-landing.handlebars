@@ -4,15 +4,17 @@
 <div id="yourArt">Your Creations <a href="/profile/create" ><button type="button" class="btn btn-secondary" style="margin-left: 40px;">Create A New Meme</button></a>
 </div>
 
-    <div>
-    {{#each myMemes as |meme|}}    
+    <div class="container">
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-3">
-                <div class="card" id="createMeme" style="margin-top:20px;">
-                    <a href="/profile/{{meme.id}}"><img src="{{meme.image.img_url}}" class="card-img-top" alt="Meme picture"></a>
-                    <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
+            {{#each myMemes as |meme|}}    
+                <div class="col-md-3">
+                    <a href="/profile/{{meme.id}}"><div class="card" id="createMeme" style="margin-top:20px;">
+                        <h5 class="hidden-id">you cant see me</h5>
+                        <img src="{{meme.image.img_url}}" class="card-img-top" alt="Meme picture">
+                        <p class="card-text" style="font-size: 25px; text-align: center;">{{meme.meme_text}}</p>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            {{/each}}
         </div>
-    {{/each}}
     </div>

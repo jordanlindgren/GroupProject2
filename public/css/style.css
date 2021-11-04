@@ -1,3 +1,20 @@
+#granim-canvas {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+a:hover, a:visited, a:active{
+    text-decoration: none;
+    color: black;
+
+}
 
 #navbarText{
     display: flexbox;
@@ -21,6 +38,8 @@ h1{
 #createMeme{
     justify-content: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #createMemeimg{
@@ -86,8 +105,8 @@ h1{
     font-size: 12px;
 }
 
-#new-comment{
-    width: 55%;
+#new-comment-text{
+    width: 45%;
 }
 
 #comment-submit-button{
@@ -100,4 +119,15 @@ h1{
 
 .hidden-id{
     visibility: hidden;
+}
+
+#edited-meme{
+    width: 55%; 
+    margin: auto;
+}
+
+#delete{
+    display: block;
+    margin: auto;
+    margin-top: 7px;
 }
