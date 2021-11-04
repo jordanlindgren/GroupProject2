@@ -1,13 +1,15 @@
+
 <h2 id="choose-img-title">Choose An Image</h2>
 
-<div class="row choose-image-div" style="margin-top: 20px;">
+<div class="row choose-image-div headline" style="margin-top: 20px;">
     {{#each images as |image|}}
     <div class="col-md-3">
         <div class="card" id="createMeme" style="margin-top:20px;">
-            <img id="{{img.id}}" src="{{image.img_url}}" class="card-img-top" alt="meme picture">
+            <a href="/profile/create/{{image.id}}"><img id="{{image.id}}" src="{{image.img_url}}" class="card-img-top" alt="meme picture"></a>
         </div>
     </div>
     {{/each}}
 </div>
 
-<script src="/js/choose-image.js"></script>
+
+

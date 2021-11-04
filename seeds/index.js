@@ -11,6 +11,9 @@ const seedAll = async () => {
   
   await seedUsers();
   console.log('\n----- USERS SEEDED -----\n');
+
+  await seedImages();
+  console.log('\n----- IMAGES SEEDED -----\n');
   
   await seedMemes();
   console.log('\n----- MEMES SEEDED -----\n');
@@ -18,8 +21,7 @@ const seedAll = async () => {
   await seedComments();
   console.log('\n----- COMMENTS SEEDED -----\n');
 
-  await seedImages();
-  console.log('\n----- IMAGES SEEDED -----\n');
+  
 
   process.exit(0);
 };

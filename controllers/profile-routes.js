@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Entry, Comment, Image } = require('../models');
+const { User, Meme, Comment, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -16,7 +16,7 @@ router.get("/", withAuth, (req, res) => {
             },
             {
                 model: Image,
-                attributes: ["id", "image_url"],
+                attributes: ["id", "img_url"],
             },
         ],
     })
@@ -31,60 +31,25 @@ router.get("/", withAuth, (req, res) => {
     }) 
 });
 
-// Displays a single meme created by this user with the option to edit or delete
-router.get("/profile/:id", withAuth, async (req, res) => {
-    try {
-        const myMemeData = await Meme.findByPk(req.params.id, {
-            include: [
-              {
-                model: User,
-                attributes: ['username'],
-              },
-              {
-                model: Image,
-                attributes: ["id", "image_url"],
-              },
-            ], 
-        });
-
-        const myMeme = myMemeData.get ({ plain: true});
-
-        res.render("meme-update-delete", {
-            ...myMeme,
-            logged_in: req.session.logged_in ,
-            layout:"profile"
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }    
-});
-
 // Displays all images in database
-router.get("/profile/create", withAuth, (req, res) => {
+router.get("/create", withAuth, (req, res) => {
+    console.log("Made it");
     Image.findAll({})
     .then(allImages => {
-        const images = allImages.map((image) => image.get ({ plain:true }));
+        const images = allImages.map((image) => image.get({ plain:true }));
 
+        console.log(images);
         res.render("choose-image", { images, logged_in: req.session.logged_in, layout:"profile" });
     })
-    .catch (err => {
+    .catch ((err) => { res.status(500).json(err);
         console.log(err);
-        res.status(500).json(err);
     }) 
 });
-
 
 // Displays HTML for creating a new meme
 router.get("/create/:id", withAuth, async (req, res) => {
     try {
-        const myImageData = await Image.findByPk(req.params.id, {
-            // include: [
-            //   {
-            //     model: User,
-            //     attributes: ['username'],
-            //   },
-            // ], 
-        });
+        const myImageData = await Image.findByPk(req.params.id);
 
         const myImage = myImageData.get ({ plain: true});
 
@@ -98,7 +63,36 @@ router.get("/create/:id", withAuth, async (req, res) => {
     }    
 });
 
+// Displays a single meme created by this user with the option to edit or delete
+router.get("/:id", withAuth, async (req, res) => {
+    try {
+        const myMemeData = await Meme.findByPk(req.params.id, {
+            include: [
+              {
+                model: User,
+                attributes: ['username'],
+              },
+              {
+                model: Image,
+                attributes: ["id", "img_url"],
+              },
+            ], 
+        });
 
+        const myMeme = myMemeData.get ({ plain: true});
+
+        res.render("meme-update-delete", {
+            ...myMeme,
+            logged_in: req.session.logged_in ,
+            layout:"profile"
+        });
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }    
+});
+
+module.exports = router;
 
 
 

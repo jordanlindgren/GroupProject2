@@ -3,9 +3,9 @@ const newEntryHandler = async (event) => {
   
     const img_id = document.querySelector('#img-id').textContent;
     const meme_text = document.querySelector('#new-entry-text').value.trim();
-    
-  
+
     if (meme_text) {
+      
       const response = await fetch(`/api/memes`, {
         method: 'POST',
         body: JSON.stringify({ meme_text, img_id }),

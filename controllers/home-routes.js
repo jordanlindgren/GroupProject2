@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Meme, Comment } = require('../models');
+const { User, Meme, Comment, Image } = require('../models');
 
 
 // Displays all the saved memes on the page
@@ -20,9 +20,9 @@ router.get("/", async (req, res) => {
           });
           
           // Serializes data to pass to Handlebars
-          const memes = memeData.map((meme) => meme.get ({ plain:true }));
+          const memes = memeData.map((meme) => meme.get({ plain:true }));
   
-          res.render("memes", { memes, logged_in: req.session.logged_in });
+          res.render("homepage", { memes, logged_in: req.session.logged_in });
       } catch (err) {
           console.log(err);
           res.status(500).json(err);
@@ -33,7 +33,7 @@ router.get("/", async (req, res) => {
 // Displays a single meme with its comments and renders an add comment section
 router.get('/memes/:id', async (req, res) => {
     try {
-      const memeData = await Entry.findByPk(req.params.id, {
+      const memeData = await Meme.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -46,17 +46,18 @@ router.get('/memes/:id', async (req, res) => {
           },
           {
             model: Image,
-            attributes: ['id', "img_url"],
+            attributes: ["id", "img_url"],
           },
         ],
       });
   
       const meme = memeData.get({ plain: true });
-      res.render('entrywithcomments', {
+      res.render('comment', {
         ...meme,
         logged_in: req.session.logged_in
       });
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   });
@@ -66,7 +67,7 @@ router.get('/memes/:id', async (req, res) => {
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/dashboard');
+      res.redirect('/profile');
       return;
     }
   
@@ -78,13 +79,6 @@ router.get('/login', (req, res) => {
 router.get("/signup", (req, res) => {
     res.render("signup");
 })
-
-
-
-
-
-
-
 
 
 module.exports = router;

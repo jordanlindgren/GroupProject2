@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
+
     
-    <title>Document</title>
+   
+    
+    <title>CaptionMe(me)</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,21 +28,31 @@
               <li class="nav-item">
                 <a class="nav-link" href="/profile">MyMemes</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link logout-button">Log Out</a>
+              </li>
               {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">MyMemes</a>
               </li>
-              {{/if}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Log In</a>
               </li>
+              {{/if}}
+              
             </ul>
             </span>
           </div>
         </div>
       </nav>
 
-    {{body}}
+  
+    {{{body}}}
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+  
 
 </body>
 </html>

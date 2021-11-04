@@ -53,15 +53,6 @@ router.post('/login', async (req, res) => {
     }
 });
 
-
-
-
-
-
-
-
-
-
 //  Route to log user out
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {

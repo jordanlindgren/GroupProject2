@@ -24,7 +24,7 @@ Meme.init (
             }
         },
         img_id:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: "image",
                 key: "id",

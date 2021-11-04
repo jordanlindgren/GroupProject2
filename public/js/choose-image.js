@@ -5,13 +5,13 @@ const chooseImage = async (event) => {
     const imageID = event.target.id;
 
     if (chosenImage) {
-        const response = await fetch(`/profile/create/`, {
+        const response = await fetch(`/profile/create`, {
             method: 'GET',
             body: JSON.stringify({ imageID }),
             headers: {
                 'Content-Type': 'application/json',
               },
-        }),
+        });
 
         if (response.ok) {
             document.location.replace(`/profile/create/${imageID}`);
