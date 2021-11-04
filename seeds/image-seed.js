@@ -29,9 +29,6 @@ const imageData = [
     img_url: "https://res.cloudinary.com/da5i4rzq1/image/upload/v1635952688/group%20project/creepymask_moe4sn.jpg",
   }, 
   {
-    img_url: "https://res.cloudinary.com/da5i4rzq1/image/upload/v1635952688/group%20project/creepymask_moe4sn.jpg",
-  }, 
-  {
     img_url: "https://res.cloudinary.com/da5i4rzq1/image/upload/v1635955864/group%20project/hell1_dvqqmr.jpg",
   }, 
   {

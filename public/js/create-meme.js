@@ -3,8 +3,6 @@ const newEntryHandler = async (event) => {
   
     const img_id = document.querySelector('#img-id').textContent;
     const meme_text = document.querySelector('#new-entry-text').value.trim();
-    
-    console.log(img_id, meme_text);
 
     if (meme_text) {
       
