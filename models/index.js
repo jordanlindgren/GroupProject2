@@ -28,10 +28,10 @@ Meme.belongsTo(User, {
 });
 
 
-// Meme.hasMany(Comment, {
-//     foreignKey: "meme_id",
-//     onDelete: "CASCADE"
-// });
+Meme.hasMany(Comment, {
+    foreignKey: "meme_id",
+    onDelete: "CASCADE"
+});
 
 Comment.belongsTo(Meme, {
     foreignKey: "meme_id"

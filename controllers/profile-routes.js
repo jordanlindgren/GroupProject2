@@ -62,6 +62,7 @@ router.get("/:id", withAuth, async (req, res) => {
 
 // Displays all images in database
 router.get("/create", withAuth, (req, res) => {
+    console.log("Made it");
     Image.findAll({})
     .then(allImages => {
         const images = allImages.map((image) => image.get ({ plain:true }));
