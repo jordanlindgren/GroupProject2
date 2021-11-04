@@ -20,6 +20,7 @@
 </div>  
 {{/each}}   
 
+{{#if logged_in}}
 <form class= "col-10 comment-submit-form" style="padding-left: 0px">
     <div class="form-group">
         <label for="formGroupExampleInput2" style="margin-top: 10px;">Add a comment</label>
@@ -31,3 +32,5 @@
 </form>
 
 <script src="/js/comment.js"></script>
+{{/if}}
+
