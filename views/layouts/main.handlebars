@@ -25,14 +25,18 @@
               <li class="nav-item">
                 <a class="nav-link" href="/profile">MyMemes</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link logout-button">Log Out</a>
+              </li>
               {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">MyMemes</a>
               </li>
-              {{/if}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Log In</a>
               </li>
+              {{/if}}
+              
             </ul>
             </span>
           </div>
@@ -40,6 +44,11 @@
       </nav>
 
     {{{body}}}
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
 
 </body>
 </html>

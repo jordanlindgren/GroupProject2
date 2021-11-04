@@ -21,11 +21,11 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
-              {{!-- <li class="nav-item">
-                <a class="nav-link" href="/profile/create">Create</a>
-              </li> --}}
               <li class="nav-item">
-                <a class="nav-link" href="/logout">Log Out</a>
+                <a class="nav-link" href="/profile">MyMemes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link logout-button">Log Out</a>
               </li>
             </ul>
             </span>
@@ -36,9 +36,10 @@
     {{{body}}}
 
   <div>
-    {{!-- {{#if logged_in}} --}}
-    {{!-- <script src="/js/logout.js"></script> --}}
-    {{!-- {{{/if}} --}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
   </div>
 </body>
 </html>
