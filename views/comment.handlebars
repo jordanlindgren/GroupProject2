@@ -1,7 +1,7 @@
 <div class="card entry-card col-12">
     <div class="card-body">
-        <div class="col-md-3">
-            <div class="card" id="createMeme" style="margin-top:20px;">
+        <div class="col-md-3 mx-auto">
+            <div class="card" id="createMeme">
                 <h5 id="meme-id" class="hidden-id">{{id}}</h5>
                 <img src="{{image.img_url}}" class="card-img-top" alt="meme picture">
                 <p class="card-text" style="font-size: 25px; text-align: center;">{{meme_text}}</p>
@@ -12,21 +12,21 @@
 </div> 
 
 {{#each comments as |comment|}}    
-<div class="card entry-card col-10" id="commentContainer">
+<div class="card entry-card col-10 mx-auto" id="commentContainer" style="margin-top: 10px">
     <div class="card-body" >
-        <h6 class="card-subtitle mb-2 text-muted" id="commentData">Comment by: {{comment.user.username}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted mx-auto" id="commentData">Comment by: {{comment.user.username}}</h6>
         <p class="card-text">{{comment.comment_text}}</p>
     </div>
 </div>  
 {{/each}}   
 
 {{#if logged_in}}
-<form class= "col-10 comment-submit-form" style="padding-left: 0px">
-    <div class="form-group">
+<form class= "col-10 comment-submit-form mx-auto text-center" style="padding-left: 0px">
+    <div class="form-group mx-auto">
         <label for="formGroupExampleInput2" style="margin-top: 10px;">Add a comment</label>
-        <input type="text" class="form-control" id="new-comment-text" placeholder="Input comment here">
+        <input type="text" class="form-control text-center mx-auto" id="new-comment-text" placeholder="Input comment here">
     </div>
-    <div>
+    <div class="mx-auto">
         <button id= "comment-submit-button" type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
