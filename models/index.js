@@ -41,9 +41,6 @@ Meme.belongsTo(Image, {
     foreignKey: "img_id",
 })
 
-// Image.belongsToMany(Meme, {
-//     foreignKey: "img_id",
-// })
 
 // Allows models to be used in other files
 module.exports = {
