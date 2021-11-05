@@ -34,7 +34,7 @@ This project is deployed at [this Heroku link](https://captionmeme.herokuapp.com
 [GitHub repo](https://github.com/jordanlindgren/GroupProject2)
 
 ## Technologies
-HTML, CSS, Bootstrap, JavaScript, Node.js, Express, Sequelize
+HTML, CSS, Bootstrap, JavaScript, Node.js, Express, Sequelize, Handlebars
 
 Images are sourced from Unsplash and formatted using Cloudinary.
 
