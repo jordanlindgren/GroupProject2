@@ -23,7 +23,7 @@ This application requires Node and users should run "npm install" in their comma
 ## Usage
 After installing Node and running "npm install" users will open their command line and initiate the program by typing "node server.js". 
 
-![Screen shot of home page](./public/images/granim.jpg)
+![Screen shot of home page](./public/images/granim.JPG)
 
 ## License
 This project licensed under the [MIT License](https://opensource.org/licenses/MIT).
