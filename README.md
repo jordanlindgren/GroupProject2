@@ -1,57 +1,48 @@
-# GroupProject2
+# CaptionMe(me)
+Bootcamp Group Project #2
 
-Deployment
-"heroku url here"
+# Professional README Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-• Team Members: Jordan, Jack, Josh, Laura
+## Description 
+We have created a meme generating app called CaptionMe(me) that allows any user to view existing memes. Once signed up and logged in users can comment on existing memes and create their own memes. Users can also update or delete memes they have created.   
+    
+## Table of Contents
 
-• Project Description: App to create a meme with images and comments that save to each specific user
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Links](#links)
+- [Technologies](#technologies) 
+- [Contributors](#contributors)
+- [Questions](#questions)
 
-MVP:
-o Authentication/Login
+## Installation
+This application requires Node and users should run "npm install" in their command line prior to use. In addition, use the schema.sql file to build your initial database prior to using the command line tool. 
 
-o Individual user accounts with created meme profiles, ability to add/remove memes base on the user
+## Usage
+After installing Node and running "npm install" users will open their command line and initiate the program by typing "node server.js". 
 
-o Image creator that features built in comment logger
+![Screen shot of home page](./public/images/granim.jpg)
 
-###Technologies Stack:
+## License
+This project licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-Cloudinary o Image file storage and resizing image functionality
+## Links
+This project is deployed at [this Heroku link](https://captionmeme.herokuapp.com/)
 
-Sequelze o JS style acccess to MySQL database
+[GitHub repo](https://github.com/jordanlindgren/GroupProject2)
 
-Express o for HTML routing and API queries
+## Technologies
+HTML, CSS, Bootstrap, JavaScript, Node.js, Express, Sequelize
 
-Passport JS & bcrypt.js o Password protected user data o bcrypt.js to hash passwords before entering them into the database
+Images are sourced from Unsplash and formatted using Cloudinary.
 
-###Wish List
+## Contributors
+Contributors to the project: Josh Bradley, Laura Hofer, Jordan Lindgren, Jack Theisen.
 
-•Uploading personal photos to further add user customization
+## Questions
+Please contact the contributors on GitHub with any questions. 
 
-•
 
-<!-- const sr = scrollReveal({
-  duration: 2000,
-  reset: true
-});
 
-sr.reveal('container', {
-});
-
-sr.reveal('.btn', {
-  delay: 500
-});
-
-sr.reveal('.card', {
-  origin: top;
-  delay: 300
-}, 50); -->
-
-<!-- Ensure that ScrollReveal is included in the <head> -->
-<!-- <script src="https://unpkg.com/scrollreveal"></script> -->
-<!-- <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script> -->
-
-<!-- <h1 class="headline">
-    Widget Inc.
-</h1>
-ScrollReveal().reveal('.headline'); -->
